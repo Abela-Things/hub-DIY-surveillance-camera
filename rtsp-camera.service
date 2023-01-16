@@ -1,0 +1,8 @@
+[Unit]
+Description=v4l2rtspserver camera serice
+
+[Service]
+ExecStart=v4l2rtspserver -W 1920 -H 1080 -F 24
+
+[Install]
+WantedBy=multi-user.target
