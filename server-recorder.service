@@ -2,7 +2,7 @@
 Description=surveillance camera recording service
 
 [Service]
-ExecStart=ffmpeg -i rtsp://192.168.1.2:8554/unicast -c:v libx264 -c:a aac -f segment -segment_time 600 -segment_format flv -strftime 1 -preset veryfast -crf 28 /mnt/hdd1/record/camera_%d-%m-%Y_%H-%M-%S.flv
+ExecStart=/usr/bin/ffmpeg -i rtsp://192.168.1.2:8554/unicast -c:v libx264 -c:a aac -f segment -segment_time 600 -segment_format flv -strftime 1 -preset veryfast -crf 28 /mnt/hdd1/record/camera_%%d-%%m-%%Y_%%H-%%M-%%S.flv
 [Unit]
 Restart=on-failure
 RestartSec=30s
